@@ -2,8 +2,12 @@
 EasyRecruit ATS 3.0 - Main Application Entry Point
 """
 import logging
+import sys
 import time
 from contextlib import asynccontextmanager
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "backend"))
 
 
 from fastapi import FastAPI, Request
@@ -100,7 +104,7 @@ def create_app() -> FastAPI:
     app.add_middleware(RequestTimingMiddleware)
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],
+        allow_origins=settings.CORS_ORIGINS,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],

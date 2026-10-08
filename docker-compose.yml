@@ -7,16 +7,16 @@ services:
       - "8001:8001"
     volumes:
       # Persist the SQLite database across container restarts
-      - easyrecruit_data:/app/app/data
+      - easyrecruit_data:/app/backend/app/data
     environment:
       - HOST=0.0.0.0
       - PORT=8001
       - DEBUG=false
       - SECRET_KEY=${SECRET_KEY:-change-me-please-use-a-long-random-string}
       - ACCESS_TOKEN_EXPIRE_MINUTES=1440
-      - DATABASE_PATH=/app/app/data/easyrecruit.db
+      - DATABASE_PATH=/app/backend/app/data/easyrecruit.db
       - LOG_LEVEL=INFO
-      - CORS_ORIGINS=*
+      - CORS_ORIGINS=${CORS_ORIGINS:-*}
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8001/api/v1/health"]

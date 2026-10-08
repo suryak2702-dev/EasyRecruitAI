@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY . .
 
 # Create persistent data directory
-RUN mkdir -p /app/app/data
+RUN mkdir -p /app/backend/app/data
 
 # Non-root user for security
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
