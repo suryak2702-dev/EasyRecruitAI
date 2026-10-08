@@ -16,18 +16,18 @@ from fastapi.staticfiles import StaticFiles
 # fastapi.middleware.base does NOT exist — always use starlette.middleware.base
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from app.api.routes import router
-from app.api.auth_routes import router as auth_router
-from app.api.job_routes import router as job_router
-from app.api.analysis_routes import router as analysis_router
-from app.api.recommendation_routes import router as recommendation_router
-from app.api.notification_routes import router as notification_router
-from app.api.interview_routes import router as interview_router
-from app.api.fraud_routes import router as fraud_router
-from app.api.bias_routes import router as bias_router
-from app.api.profile_routes import router as profile_router, PHOTO_DIR
-from app.db.database import init_db
-from app.config import settings
+from backend.app.api.routes import router
+from backend.app.api.auth_routes import router as auth_router
+from backend.app.api.job_routes import router as job_router
+from backend.app.api.analysis_routes import router as analysis_router
+from backend.app.api.recommendation_routes import router as recommendation_router
+from backend.app.api.notification_routes import router as notification_router
+from backend.app.api.interview_routes import router as interview_router
+from backend.app.api.fraud_routes import router as fraud_router
+from backend.app.api.bias_routes import router as bias_router
+from backend.app.api.profile_routes import router as profile_router, PHOTO_DIR
+from backend.app.db.database import init_db
+from backend.app.config import settings
 
 # ── Logging ──────────────────────────────────────────────────────────────────
 logging.basicConfig(

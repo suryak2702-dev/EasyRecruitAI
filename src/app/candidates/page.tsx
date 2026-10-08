@@ -5,7 +5,7 @@ import { AppShell } from "@/components/app-shell";
 import { Card, ScoreRing, Badge, ErrorState, EmptyState, LoadingOverlay } from "@/components/ui";
 import { api, ApiError } from "@/lib/api";
 import type { AnalysisListItem, PaginatedResponse } from "@/types";
-import { formatDate, scoreColor, scoreLabel, parseJsonArray } from "@/lib/utils";
+import { formatDate, scoreColor, scoreLabel } from "@/lib/utils";
 import { Users } from "lucide-react";
 
 export default function CandidatesPage() {
@@ -43,7 +43,6 @@ export default function CandidatesPage() {
 
       {items.length === 0 ? (
         <EmptyState
-          icon={<Users className="h-10 w-10 text-gray-600" />}
           title="No candidates yet"
           description="Analyze resumes to build your candidate pool."
         />

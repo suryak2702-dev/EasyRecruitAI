@@ -2,12 +2,12 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { AppShell } from "@/components/app-shell";
-import { Card, Badge, Button, ErrorState, LoadingOverlay, EmptyState, Modal, Textarea, Input } from "@/components/ui";
+import { Card, Badge, Button, ErrorState, LoadingOverlay, EmptyState, Modal, Textarea } from "@/components/ui";
 import { api, ApiError } from "@/lib/api";
 import { useAuth } from "@/lib/auth-context";
 import type { NotificationItem, NotificationStats, JobApplication } from "@/types";
 import { formatDate } from "@/lib/utils";
-import { Bell, MapPin, Briefcase, Users } from "lucide-react";
+import { Bell, MapPin, Briefcase, Users, CloudUpload as UploadCloud } from "lucide-react";
 
 export default function NotificationsPage() {
   const { user } = useAuth();

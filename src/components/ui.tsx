@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import type { ReactNode, ButtonHTMLAttributes, InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes } from "react";
 import { X, AlertCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/lib/auth-context";
 
 // Button
 type ButtonVariant = "primary" | "secondary" | "outline" | "danger" | "ghost";
@@ -214,8 +215,9 @@ export function ScoreBar({ label, value }: { label: string; value: number }) {
 // LogoutButton helper
 export function LogoutButton() {
   const router = useRouter();
+  const { logout } = useAuth();
   return (
-    <Button variant="ghost" size="sm" onClick={async () => { await import("@/lib/auth-context").then(m => m.useAuth().logout()); router.push("/login"); }}>
+    <Button variant="ghost" size="sm" onClick={async () => { await logout(); router.push("/login"); }}>
       Sign Out
     </Button>
   );

@@ -51,11 +51,11 @@ export default function ProfilePage() {
     setSuccess("");
     try {
       const updated = await api.updateProfile({
-        full_name: form.full_name || undefined,
-        date_of_birth: form.date_of_birth || undefined,
-        gender: form.gender || undefined,
-        phone: form.phone || undefined,
-        address: form.address || undefined,
+        full_name: form.full_name || "",
+        date_of_birth: form.date_of_birth || "",
+        gender: form.gender || "",
+        phone: form.phone || "",
+        address: form.address || "",
       });
       setProfile(updated);
       setSuccess("Profile saved successfully.");

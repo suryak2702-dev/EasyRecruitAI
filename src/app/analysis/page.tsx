@@ -5,7 +5,7 @@ import { AppShell } from "@/components/app-shell";
 import { Card, Button, Textarea, ScoreRing, ScoreBar, Badge, ErrorState, LoadingOverlay } from "@/components/ui";
 import { api, ApiError } from "@/lib/api";
 import { useAuth } from "@/lib/auth-context";
-import type { ResumeAnalysisFullResponse, Job } from "@/types";
+import type { ResumeAnalysisFullResponse } from "@/types";
 import { CloudUpload as UploadCloud, FileText } from "lucide-react";
 
 export default function AnalysisPage() {
@@ -96,7 +96,7 @@ export default function AnalysisPage() {
                   <p className="text-sm text-gray-500">{result.candidate_email || ""}</p>
                   <p className="mt-1 text-xs text-gray-600">{result.filename}</p>
                   <p className="mt-1 text-xs text-gray-600">
-                    Domain: {result.detected_domain || "general"} · Accuracy: {Math.round(result.accuracy_estimate)}%
+                    Accuracy: {Math.round(result.accuracy_estimate)}%
                   </p>
                 </div>
               </div>
