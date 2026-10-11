@@ -7,7 +7,7 @@ import type {
   AdminStats, TeamData, ResumeAnalysisFullResponse,
 } from "@/types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001";
+const API_URL = "";
 
 export class ApiError extends Error {
   status: number;

@@ -91,8 +91,7 @@ export default function ProfilePage() {
 
   if (loading) return <AppShell><LoadingOverlay message="Loading profile..." /></AppShell>;
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001";
-  const photoUrl = profile?.photo_url ? `${API_URL}${profile.photo_url}` : null;
+  const photoUrl = profile?.photo_url || null;
 
   return (
     <AppShell>
